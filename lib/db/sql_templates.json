@@ -32,5 +32,6 @@
   "reportBin": "UPDATE `sandbox` SET `reported`=? WHERE `url`=? AND `revision`=? AND `active`='y'",
   "isOwnerOf": "SELECT name=? as `owner` FROM `owners` WHERE `url`=? AND `revision`=1",
   "getUserBinCount": "SELECT COUNT(*) as total FROM `owners` WHERE `name`=?",
-  "getAssignmentData": "SELECT html, css, javascript, settings from sandbox, assignment_templates t where t.url = sandbox.url and t.revision = sandbox.revision and t.id = ?"
+  "getAssignmentData": "SELECT html, css, javascript, settings from sandbox, assignment_templates t where t.url = sandbox.url and t.revision = sandbox.revision and t.id = ?",
+  "setAssignmentStarted": "insert into assignments (name, assignment_id, url) values (?, ?, ?)"
 }

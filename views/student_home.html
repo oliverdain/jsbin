@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Student Homepage</title>
+  </head>
+  <body>
+     Welcome to your home page <strong>{{user.name}}</strong>.
+     <h2>Not Started</h2>
+     <table>
+        <tr>
+           <th>
+              Description
+           </th>
+           <th>
+              Start Date
+           </th>
+           <th>
+              Due Date
+           </th>
+        </tr>
+        {{#assignments.not_started}}
+        <tr>
+           <td>
+              {{description}}
+           </td>
+           <td>
+              {{start_date}}
+           </td>
+           <td>
+              {{due_date}}
+           </td>
+        </tr>
+        {{/assignments.not_started}}
+     </table>
+
+     <h2>Started</h2>
+     <table>
+        <tr>
+           <th>
+              Description
+           </th>
+           <th>
+              Start Date
+           </th>
+           <th>
+              Due Date
+           </th>
+        </tr>
+        {{#assignments.started}}
+        <tr>
+           <td>
+              <a href="{{url}}/latest/edit">{{description}}</a>
+           </td>
+           <td>
+              {{start_date}}
+           </td>
+           <td>
+              {{due_date}}
+           </td>
+        </tr>
+        {{/assignments.started}}
+     </table>
+
+     <h2>Done</h2>
+     <table>
+        <tr>
+           <th>
+              Description
+           </th>
+           <th>
+              Start Date
+           </th>
+           <th>
+              Due Date
+           </th>
+        </tr>
+        {{#assignments.done}}
+        <tr>
+           <td>
+              {{description}}
+           </td>
+           <td>
+              {{start_date}}
+           </td>
+           <td>
+              {{due_date}}
+           </td>
+        </tr>
+        {{/assignments.done}}
+     </table>
+  </body>
+</html>

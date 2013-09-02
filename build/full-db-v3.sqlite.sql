@@ -45,7 +45,10 @@ CREATE TABLE IF NOT EXISTS `sandbox` (
 CREATE TABLE IF NOT EXISTS `assignment_templates` (
   `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   `url` VARCHAR(255) NOT NULL,
-  `revision` INTEGER NOT NULL
+  `revision` INTEGER NOT NULL,
+  `description` VARCHAR(100),
+  `start_date` DATE NOT NULL,
+  `due_date` DATE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `assignments` (

@@ -2,6 +2,25 @@
 <html>
   <head>
      <title>Student Homepage</title>
+     <script src="js/vendor/jquery.js"></script>
+     <script>
+        makePost = function(url, params) {
+           var f = $('<form/>', {
+              action: url,
+              method: 'post'
+           });
+           for (j in params) {
+              if (params.hasOwnProperty(j)) {
+                 var input = $('<input/>', {
+                    name: j,
+                    value: params[j]
+                 });
+                 f.append(input);
+              }
+           }
+           f.submit();
+        };
+     </script>
   </head>
   <body>
      Welcome to your home page <strong>{{user.name}}</strong>.
@@ -21,7 +40,9 @@
         {{#assignments.not_started}}
         <tr>
            <td>
-              {{description}}
+              <a href='#' onclick="makePost('/startAssignment', {assignNumber: {{id}} })">
+                 {{description}}
+              </a>
            </td>
            <td>
               {{start_date}}
